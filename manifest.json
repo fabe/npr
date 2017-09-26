@@ -1,0 +1,20 @@
+{
+  "name": "NPR",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Simple chrome extension to stream NPR.",
+  "homepage_url": "https://fabianschultz.com",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "NPR"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["background"]
+}

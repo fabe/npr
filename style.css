@@ -1,0 +1,83 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+}
+
+button {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 20px;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background-color: #5076b8;
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -1000px;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.35, 1.6, 0.7, 1);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#start {
+  background-position-x: 55%;
+  background-image: url('icons/start.svg');
+}
+
+#stop {
+  display: none;
+  background-image: url('icons/stop.svg');
+}
+
+.playing #stop {
+  display: block;
+}
+
+.playing #start {
+  display: none;
+}
+
+.playing .pulse {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #5076b8;
+  border-radius: 100px;
+  animation: pulse 1.5s ease-in-out infinite;
+  content: '';
+  z-index: -100;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes pulse {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
