@@ -1,12 +1,12 @@
 {
-  "name": "NPR",
-  "version": "0.0.1",
+  "name": "NPR Player",
+  "version": "0.0.2",
   "manifest_version": 2,
-  "description": "Simple chrome extension to stream NPR.",
-  "homepage_url": "https://fabianschultz.com",
+  "description": "A simple player to stream NPR in the background.",
+  "homepage_url": "https://github.com/fabe/npr",
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "NPR"
+    "default_title": "NPR Player"
   },
   "background": {
     "page": "background.html"
