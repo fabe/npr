@@ -15,7 +15,7 @@ function checkIfPlaying() {
 }
 
 function reset() {
-  const stream = npr.src;
-  npr.src = '';
-  npr.src = stream;
+  const stream = npr.innerHTML;
+  npr.innerHTML = '';
+  npr.innerHTML = stream;
 }
