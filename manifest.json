@@ -1,6 +1,6 @@
 {
   "name": "NPR Player",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "description": "A simple player to stream NPR in the background.",
   "homepage_url": "https://github.com/fabe/npr",
