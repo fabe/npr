@@ -15,7 +15,10 @@ function checkIfPlaying() {
 }
 
 function reset() {
+  // Make sure we're live and don't play from cache.
   const stream = npr.innerHTML;
   npr.innerHTML = '';
   npr.innerHTML = stream;
+
+  npr.load();
 }
