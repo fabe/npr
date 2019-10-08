@@ -1,37 +1,24 @@
-let hls = null;
-let player = document.getElementById('npr');
-const stream = 'https://nprsxsw-lh.akamaihd.net/i/prog24_1@348758/master.m3u8';
+const npr = document.getElementById('npr');
 
 function start() {
   reset();
-  player.play();
+  npr.play();
 }
 
 function stop() {
-  player.pause();
+  npr.pause();
   reset();
 }
 
-function reset() {
-  // If an hls.js instance already
-  // exists, destroy it.
-  if (hls) {
-    hls.destroy();
-  }
-
-  // Refresh the player element
-  // by removing it from the DOM
-  // and promptly reinserting.
-  const parent = player.parentNode;
-  parent.removeChild(player);
-  parent.appendChild(player);
-
-  // Create the hls.js instance.
-  hls = new Hls();
-  hls.loadSource(stream);
-  hls.attachMedia(player);
+function checkIfPlaying() {
+  return !npr.paused;
 }
 
-function checkIfPlaying() {
-  return !player.paused;
+function reset() {
+  // Make sure we're live and don't play from cache.
+  const stream = npr.innerHTML;
+  npr.innerHTML = '';
+  npr.innerHTML = stream;
+
+  npr.load();
 }
